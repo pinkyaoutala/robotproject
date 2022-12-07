@@ -4,6 +4,7 @@ Library    SeleniumLibrary
 *** Variables ***
 ${url}      https://testautomationpractice.blogspot.com/
 ${browser}      chrome
+ #${url}      http://www.newtours.demoaut.com/
 
 *** Keywords ***
 
@@ -38,4 +39,27 @@ HandleFramesTestCase
 
     go to  ${url}
     double click element    //button[text()='Copy Text']
+
+    go to    https://demo.automationtesting.in/Windows.html
+    click button    //button[@class='btn btn-info']
+    switch window    title=Selenium
+    click link    Documentation
+
+
+    open browser    https://in.search.yahoo.com/?fr2=inr    ${browser}
+    switch browser    1
+    get title
+    close all browsers
+
+    open browser     https://testautomationpractice.blogspot.com/      ${browser}
+    maximize browser window
+    drag and drop    //div[@class='ui-widget-content ui-draggable ui-draggable-handle']         //div[@class='ui-widget-header ui-droppable']
+
+
+
+
+
+
+
+
 
